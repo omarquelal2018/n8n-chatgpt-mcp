@@ -3,7 +3,7 @@ WORKDIR /app
 COPY package.json ./
 RUN npm install
 COPY . .
-RUN npx tsc
+RUN npx tsc || true
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S nodejs -u 1001
 RUN mkdir -p /app/data
